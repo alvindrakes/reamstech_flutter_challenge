@@ -12,16 +12,18 @@ class HomeCtrl extends GetxController {
   }
 
   Future<void> _simulateLoading() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 3));
     isLoading = false;
     update();
   }
 
-  List<ItemCardModel> _getData() {
+  void _getData() {
+    if (SimulatedData.abilities.isEmpty) {
+      return;
+    }
+
     for (var i = 0; i < SimulatedData.abilities.length; i++) {
       itemCards.add(ItemCardModel.fromMap(SimulatedData.abilities[i]));
     }
-
-    return itemCards;
   }
 }
