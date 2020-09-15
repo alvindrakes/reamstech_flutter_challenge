@@ -1,16 +1,18 @@
-# reamstech_challenge
+# Reamstech flutter challenge
 
-A new Flutter project.
+###Background
+It is a common pattern on the frontend that we obtain some kind of payload in the form of JSON from the backend server. This payload is then transformed into some form that allows Flutter components to render.
 
-## Getting Started
+###Requirements
+In this challenge, you are required to:
 
-This project is a starting point for a Flutter application.
+- Download the .json file in the appendix section below
+- Create a new Flutter project
+- Import the .json file into your component file
+- Render a simple widget displaying the JSON payload
 
-A few resources to get you started if this is your first Flutter project:
+###UI Reference
+<img src="challenge_image.jpg" width="268" height="287">
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+###Outcome
+![](app.gif)
