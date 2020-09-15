@@ -7,7 +7,7 @@ import 'home_ctrl.dart';
 import '../constants/theme_colors.dart';
 import 'package:reamstech_challenge/shared_widgets/item_card.dart';
 
-class HomePage extends GetView<HomeCtrl> {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformScaffold(
@@ -85,18 +85,27 @@ class _FilterBar extends StatelessWidget {
 class _ItemList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (context, index) {
-          return ItemCard(
-            title: "Hello",
-            subtitle: "this is a test",
-            imageUrl:
-                "http://static.wikia.nocookie.net/dota2_gamepedia/images/0/0e/Telekinesis_icon.png",
-          );
-        },
-        childCount: SimulatedData.abilities.length,
-      ),
+    return GetBuilder<HomeCtrl>(
+      init: HomeCtrl(),
+      builder: (ctrl) {
+        return ctrl.isLoading
+            ? SliverToBoxAdapter(
+                child: Center(
+                child: PlatformCircularProgressIndicator(),
+              ))
+            : SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    return ItemCard(
+                      title: ctrl.itemCards[index].title,
+                      subtitle: ctrl.itemCards[index].subtitle,
+                      imageUrl: ctrl.itemCards[index].imageUrl,
+                    );
+                  },
+                  childCount: SimulatedData.abilities.length,
+                ),
+              );
+      },
     );
   }
 }
