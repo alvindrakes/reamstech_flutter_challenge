@@ -26,7 +26,7 @@ class HomePage extends GetView<HomeCtrl> {
       body: CustomScrollView(
         slivers: <Widget>[
           _FilterBar(),
-          SliverToBoxAdapter(child: const SizedBox(height: 20)),
+          SliverToBoxAdapter(child: const SizedBox(height: 10)),
           _ItemList(),
           SliverToBoxAdapter(child: const SizedBox(height: 50)),
         ],
@@ -42,7 +42,7 @@ class _FilterBar extends StatelessWidget {
       key: Key('filterBar'),
       elevation: 0.0,
       pinned: true,
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       title: SizedBox(
         height: 40,
         child: FlatButton(
