@@ -20,4 +20,6 @@ In this challenge, you are required to:
 
 State management used:  Get package
 
+CI/CD used: Codemagic webhook
+
 <img src="app.gif" width="200" height="380"/>
