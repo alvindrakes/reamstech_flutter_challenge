@@ -16,5 +16,8 @@ In this challenge, you are required to:
 <img src="challenge_image.jpg" width="268" height="287">
 
 <br> <br/>
-### Outcome
+### Final result
+
+State management used:  Get package
+
 <img src="app.gif" width="200" height="380"/>
